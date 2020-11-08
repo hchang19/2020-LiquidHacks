@@ -52,7 +52,6 @@ define pov = Character("[name]", who_color="f77f00")
 # The game starts here.
 
 label start:
-    jump boot_camp
     scene welcome
     show n
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
@@ -137,16 +136,16 @@ label start:
 
         menu:
             "I’m fine, I just have a bit of trouble breathing.":
-                n "You have might have COVID-19. It will surely take a tool on your health" # (Your health goes down/ you have COVID)
+                n "You have might have COVID-19. It will surely take a toll on your health." # (Your health goes down/ you have COVID)
                 $ health -= 5
             "My head is clear and the air has never smelled better.":
-                n "You're healthy."
+                n "It must have been stuffy where you were, huh? Glad to hear you're healthy though!"
             "You know just coughing up blood, the usual.":
-                n "Sir, please leave the house right now" #(Death)
+                n "Sir, please leave the house right now." #(Death)
                 $ health = -1
                 jump end_scene
             "Eh, same as always.":
-                n "You're fine." # (Fine)
+                n "Glad to hear you're alright." # (Fine)
 
     n "Thank you for the information! Now, it's time to meet the team!"
     show i smile2:
@@ -185,7 +184,7 @@ label start:
     menu:
         "Stay up a bit longer.":
             pov "yes! People building mud huts from scratch! I love youtube!"
-            
+
             $ health -= 5
             $ sleep_late += 1
         "Go to bed now.":

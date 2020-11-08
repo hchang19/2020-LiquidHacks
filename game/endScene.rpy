@@ -5,12 +5,8 @@ label end_scene:
     define fail = True
     scene welcome
     show n
-    if healh < 1:
+    if health <= 0:
         jump death
-    python:
-        voucher = "corejj"
-        health = 40
-    jump alternate_ending_corejj
     python:
         for x in friendship:
             if friendship[x] > 0:
@@ -283,6 +279,7 @@ label alternate_ending_impact:
     label death:
         show n
         n "You died. Take better care of yourself next time."
+        jump credits
 
     label credits:
         hide t
@@ -292,6 +289,7 @@ label alternate_ending_impact:
         hide b
         hide tear
         hide blush
+        hide sparkles
         hide angry
         show n at center
         show flowers at center:
