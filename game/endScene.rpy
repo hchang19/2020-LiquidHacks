@@ -5,7 +5,12 @@ label end_scene:
     define fail = True
     scene welcome
     show n
-
+    if healh < 1:
+        jump death
+    python:
+        voucher = "corejj"
+        health = 40
+    jump alternate_ending_corejj
     python:
         for x in friendship:
             if friendship[x] > 0:
@@ -76,6 +81,8 @@ label alternate_ending_impact:
     i "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
     if health >= 30:
         hide angry
+        show sparkles at left:
+            zoom 1.2
         n "You’re right! How could I have overlooked [name]’s gameplay?! [name], forgive me! Welcome to the team, let’s scrim!"
     else:
         hide angry
@@ -118,6 +125,8 @@ label alternate_ending_impact:
         j "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
         if health >= 30:
             hide angry
+            show sparkles at left:
+                zoom 1.2
             n "You’re right! How could I have overlooked [name]’s gameplay?! [name], forgive me! Welcome to the team, let’s scrim!"
         else:
             hide angry
@@ -160,6 +169,8 @@ label alternate_ending_impact:
         t "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
         if health >= 30:
             hide angry
+            show sparkles at left:
+                zoom 1.2
             n "You’re right! How could I have overlooked [name]’s gameplay?! [name], forgive me! Welcome to the team, let’s scrim!"
         else:
             hide angry
@@ -202,6 +213,8 @@ label alternate_ending_impact:
         c "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
         if health >= 30:
             hide angry
+            show sparkles at left:
+                zoom 1.2
             n "You’re right! How could I have overlooked [name]’s gameplay?! [name], forgive me! Welcome to the team, let’s scrim!"
         else:
             hide angry
@@ -244,6 +257,8 @@ label alternate_ending_impact:
         b "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
         if health >= 30:
             hide angry
+            show sparkles at left:
+                zoom 1.2
             n "You’re right! How could I have overlooked [name]’s gameplay?! [name], forgive me! Welcome to the team, let’s scrim!"
         else:
             hide angry
@@ -264,6 +279,10 @@ label alternate_ending_impact:
         show n
         n "I'm sorry, you weren’t quite what we were looking for. Why don’t you try again next time?"
         jump credits
+
+    label death:
+        show n
+        n "You died. Take better care of yourself next time."
 
     label credits:
         hide t

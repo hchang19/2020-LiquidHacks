@@ -52,7 +52,7 @@ define pov = Character("[name]", who_color="f77f00")
 # The game starts here.
 
 label start:
-
+    jump boot_camp
     scene welcome
     show n
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
@@ -138,7 +138,7 @@ label start:
 
         menu:
             "I’m fine, I just have a bit of trouble breathing.":
-                n "You have might have COVID-19. It will surely take a tool on your health" # (Your health goes down/ you have COVID) 
+                n "You have might have COVID-19. It will surely take a tool on your health" # (Your health goes down/ you have COVID)
                 $ health -= 5
             "My head is clear and the air has never smelled better.":
                 n "You're healthy."
@@ -166,19 +166,19 @@ label start:
     hide c
     show n at left
     show i wave at right
-    i "Hey, I'm Impact. Good to meet you."
+    i "Hey, I'm Impact, the Team Liquid's top laner. Good to meet you."
     hide i
     show b wave at right
-    b "I'm Broxah. Welcome to the bootcamp."
+    b "I'm Broxah, the jungler for Team Liquid. Welcome to the bootcamp."
     hide b
     show j wave at right
-    j "Hello. I'm Jensen. Congratulations on making it to the bootcamp!"
+    j "Hello. I'm Jensen. I'm the mid laner for Team Liquid. Congratulations on making it to the bootcamp!"
     hide j
     show t wave at right
-    t "I'm Tactical. Great to finally meet you."
+    t "I'm Tactical. I am the adc for bot lane for Team Liquid. Great to finally meet you."
     hide t
     show c wave at right
-    c "Hello, I'm CoreJJ. It's very nice to meet you!"
+    c "Hello, I'm CoreJJ. I'm the support laner on Team Liquid. It's very nice to meet you!"
     hide c
     hide n
     show n
@@ -191,6 +191,6 @@ label start:
                 sleep_late += 1
         "Go to bed now.":
             pov "Blue is right. I'm pooped."
-            
+
     $ day_num += 1
     jump day_start
