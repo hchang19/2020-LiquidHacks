@@ -1,4 +1,4 @@
-﻿label start:
+﻿label boot_camp:
     scene Welcome
     show blue
     e "Welcome to your second day of bootcamp! Here are some things you can choose to do:"
@@ -7,7 +7,8 @@
         "Go to the gym":
             scene Gym
             "You work out for a bit in the team house gym."
-             stamina = stamina + 10
+            python:
+                stamina = stamina + 10
         "Go on a Run":
             scene Run
             "You go on a run around the neighbourhood." #stamina +???
@@ -28,30 +29,31 @@
             "You watch a VOD of the team playing." #+gameplay
         "Practice with Impact":
             scene Practice
-                show i smile
+            show i smile
             "You duoqueue with Impact." #+gameplay & impact
         "Practice with Broxah":
             scene Practice
-                show b smile
+            show b smile
             "You duoqueue with Broxah." #+gameplay & broxah
         "Practice with Jensen":
             scene Practice
-                show j smile
+            show j smile
             "You duoqueue with Jensen." #+gameplay & jensen
         "Practice with Tactical":
             scene Practice
-                show t smile
+            show t smile
             "You duoqueue with Tactical." #+gameplay & tactical
         "Practice with CoreJJ":
             scene Practice
-                show c smile
+            show c smile
             "You duoqueue with CoreJJ." #+gameplay & corejj
         "I'm done for the day":
             jump dayEnd
 
 
-    if stamina = 0:
-    jump dayEnd
+    if stamina == 0:
+        jump dayEnd
+
     label dayEnd:
         n "Whew, what a long day of hard work! Go rest up and come back tomorrow stronger!"
         menu:
