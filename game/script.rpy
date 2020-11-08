@@ -13,13 +13,14 @@ image run = "./scenes/Run.PNG"
 image map = "Map.PNG"
 
 # defining characters
+
 define n = Character("Blue", who_color="#0f447a") # n for narrator
+
 define i = Character("Impact", who_color="#e5ff32")
 define b = Character("Broxah", who_color="32dcff")
 define j = Character("Jensen", who_color="7d32ff")
 define t = Character("Tactical", who_color="ff3255")
 define c = Character("CoreJJ", who_color="ff32b4")
-               
 
 # User stats
 define name = ""
@@ -45,6 +46,9 @@ label start:
     show n
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
         Before you meet the team members, we will like to know you a little better. Please answer the following questions truthfully and honestly"
+
+    # REMOVE THIS
+    jump load_team_info
 
     # application screen
     label ask_name:
@@ -136,6 +140,10 @@ label start:
                 "You're mean." # (RNG health?)
 
 
+        
+
+
+                    
     jump teamIntroduction
 
     label teamIntroduction:
