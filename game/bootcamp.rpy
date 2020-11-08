@@ -38,7 +38,7 @@ label boot_camp:
             show b smile
             b "Keep up the good work!"
             b "You will be strong like me in no time!"
-            b "{i} Flexes muscles and leaves {/i}"
+            b "{i} Flexes muscles and leaves. {/i}"
             hide b
 
             "You hanged out with Broxah! Looks like your friendship increased a little."

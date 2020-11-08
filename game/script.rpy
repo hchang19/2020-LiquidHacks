@@ -164,19 +164,19 @@ label start:
     hide c
     show n at left
     show i wave at right
-    i "Hey, I'm Impact, the Team Liquid's top laner. Good to meet you."
+    i "Hey, I'm Impact, the Team Liquid's top laner. Good to meet you and good luck! I hope to see you around."
     hide i
     show b wave at right
-    b "I'm Broxah, the jungler for Team Liquid. Welcome to the bootcamp."
+    b "I'm Broxah, the jungler for Team Liquid. Welcome to the bootcamp, I'm sure you're going to love it here!"
     hide b
     show j wave at right
     j "Hello. I'm Jensen. I'm the mid laner for Team Liquid. Congratulations on making it to the bootcamp!"
     hide j
     show t wave at right
-    t "I'm Tactical. I am the adc for bot lane for Team Liquid. Great to finally meet you."
+    t "I'm Tactical. I am the adc for bot lane on Team Liquid. Great to finally meet you. I've heard great things about you."
     hide t
     show c wave at right
-    c "Hello, I'm CoreJJ. I'm the support laner on Team Liquid. It's very nice to meet you!"
+    c "Hello, I'm CoreJJ. I'm the support laner on Team Liquid. It's very nice to meet you! I can't wait to play together!"
     hide c
     hide n
     show n
