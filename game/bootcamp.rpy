@@ -2,7 +2,7 @@
     scene map with Fade(1.0, 0, 1.0)
     show n
     n "Welcome to your second day of bootcamp! Here are some things you can choose to do:"
-
+    jump end_scene
     menu:
         "Go to the gym":
             scene gym
@@ -34,48 +34,48 @@
             "You practice your laning in game."
             python:
                 gameplay_level = gameplay_level + 10
-                friendship["tactical"] = friendship["tactical"] + 10
-                friendship["corejj"] = friendship["corejj"] + 10   #+gameplay & tactical corejj
+                friendship["tactical"] = friendship["tactical"] + 1
+                friendship["corejj"] = friendship["corejj"] + 1   #+gameplay & tactical corejj
         "Rewatch VOD":
             scene practice
             "You watch a VOD of the team playing."
             python:
-                gameplay_level = gameplay_level + 10  #+gameplay
+                gameplay_level = gameplay_level + 1  #+gameplay
         "Practice with Impact":
             scene practice
             show i smile
             "You duoqueue with Impact."
             python:
                 gameplay_level = gameplay_level + 10
-                friendship["impact"] = friendship["impact"] + 10   #+gameplay & impact
+                friendship["impact"] = friendship["impact"] + 1  #+gameplay & impact
         "Practice with Broxah":
             scene practice
             show b smile
             "You duoqueue with Broxah."
             python:
                 gameplay_level = gameplay_level + 10
-                friendship["broxah"] = friendship["broxah"] + 10   #+gameplay & broxah
+                friendship["broxah"] = friendship["broxah"] + 1   #+gameplay & broxah
         "Practice with Jensen":
             scene practice
             show j smile
             "You duoqueue with Jensen."
             python:
                 gameplay_level = gameplay_level + 10
-                friendship["jensen"] = friendship["jensen"] + 10   #+gameplay & jensen
+                friendship["jensen"] = friendship["jensen"] + 1   #+gameplay & jensen
         "Practice with Tactical":
             scene practice
             show t smile
             "You duoqueue with Tactical."
             python:
                 gameplay_level = gameplay_level + 10
-                friendship["tactical"] = friendship["tactical"] + 10  #+gameplay & tactical
+                friendship["tactical"] = friendship["tactical"] + 1 #+gameplay & tactical
         "Practice with CoreJJ":
             scene practice
             show c smile
             "You duoqueue with CoreJJ."
             python:
                 gameplay_level = gameplay_level + 10
-                friendship["corejj"] = friendship["corejj"] + 10 #+gameplay & corejj
+                friendship["corejj"] = friendship["corejj"] + 1 #+gameplay & corejj
         "I'm done for the day":
             jump dayEnd
 
