@@ -10,6 +10,8 @@ define j = Character("Jensen", who_color="7d32ff")
 define t = Character("Tactical", who_color="ff3255")
 define c = Character("CoreJJ", who_color="ff32b4")
 
+#Define and generate player stats through liquidDb API
+
 # Linking images
 init:
     image b smile:
@@ -112,7 +114,8 @@ init:
         zoom 1.2
         xanchor .12
 
-
+# Create stats for the player
+define pov = Character("[povname]", who_color="f77f00")
 
 # The game starts here.
 
@@ -129,13 +132,27 @@ label start:
     # directory.
 
     show n
-
-
     # These display lines of dialogue.
-
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
-        Please fill out this form to finalize your information."
+        Before you meet the team members, we will like to know you a little better. Please answer the following questions truthfully and honestly"
+
     # application screen
+    python: 
+        povname = renpy.input("Do you mind telling me your name?")
+        povname = povname.strip()
+
+        name_flag = True
+        if not povname:
+            povname = "Beanbag"
+            name_flag = False
+
+    if provided_name:
+        n "Oh I see! Welcome to Team Liquid, [povname]! You will have a great time here"
+    else:
+        n "Okay Mr. Mysterious man. Since you didn't give us a name, I am just going to call you [povname]. Got it?"
+        pov "Uhh... okay."
+    
+    
 
     n "Thank you. Now that we have you information, we can set you up in your room.
         But before that, I must ask how do you feel after quarantining for 2 weeks?"
