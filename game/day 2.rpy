@@ -1,5 +1,5 @@
 ﻿label boot_camp:
-    scene Welcome
+    scene Welcome with fade
     show blue
     e "Welcome to your second day of bootcamp! Here are some things you can choose to do:"
 

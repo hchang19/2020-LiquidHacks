@@ -166,15 +166,17 @@ label start:
     show c wave at right
     c "Hello, I'm CoreJJ. It's very nice to meet you!"
     hide c
-    show n:
-        xpos .5
+    hide n
+    show n
     n "Meeting people can be exhausting, why don’t you rest up and I’ll get you tomorrow."
     menu:
         "Stay up a bit longer.":
             "You choose to stay up longer."
-            health = health - 10
+            # health = health - 10
         "Go to bed now.":
             "Blue is right. I'm pooped."
+
+jump boot_camp
 
 
 return # This ends the game.
