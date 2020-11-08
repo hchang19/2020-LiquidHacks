@@ -22,18 +22,29 @@ define j = Character("Jensen", who_color="7d32ff")
 define t = Character("Tactical", who_color="ff3255")
 define c = Character("CoreJJ", who_color="ff32b4")
 
+# what day it is
+define day_num = 1
+define day_start = True
+define sleep_late = 0
 # User stats
 define name = ""
 define status = ""
 define nationality = ""
 define birthday = ""
 define game = ""
-define friendship = [0, 0, 0, 0, 0]
+define friendship = {
+        "impact": 0,
+        "broxah": 0,
+        "jensen": 0,
+        "tactical": 0,
+        "corejj": 0
+    }
 
 #Randomly generated userstats
 define gameplay_level = 0
 define health = 0
-define stamina = 0
+define curr_stamina = 0
+define max_stamina = 0
 
 # Create stats for the player
 define pov = Character("[name]", who_color="f77f00")
@@ -46,10 +57,7 @@ label start:
     show n
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
         Before you meet the team members, we will like to know you a little better. Please answer the following questions truthfully and honestly"
-
-    # REMOVE THIS
-    jump load_team_info
-
+    jump generate_stat
     # application screen
     label ask_name:
         python:
@@ -59,7 +67,7 @@ label start:
         if not name:
             n "Hmm. Sorry, I didn't quite catch that. Can you repeat yourself one more time?"
             jump ask_name
-    
+
     n "Nice to meet you [name]. Just a few more questions to go!"
 
     label ask_status:
@@ -72,7 +80,7 @@ label start:
             jump ask_status
         else:
             n "so you are currently [status]. Sounds good!"
-    
+
     label ask_nationality:
         python:
             nationality = renpy.input("Which country do you hail from?")
@@ -99,7 +107,7 @@ label start:
             jump ask_birthday
         else:
             n "I see! Your birthday is on [birthday]! Hang in there we are almost done!"
-                
+
     label ask_game:
         python:
             game = "League of Legends"
@@ -113,64 +121,76 @@ label start:
 
             gameplay_level = random.randrange(10,50,1)
             health = random.randrange(10,50,5)
-            stamina = random.randrange(10,50,5)
-            total = gameplay_level +  health + stamina
+            max_stamina = random.randrange(20,50,5)
+            total = gameplay_level +  health + max_stamina
         n "Your stats are back! Let's take a look at them."
         n " Gameplay: [gameplay_level] \n
            Health: [health] \n
-           Stamina: [stamina]"
+           Stamina: [max_stamina]"
 
         if total < 75:
             n "A bit low, but I am sure you can do better in a couple of days!"
         else:
             n "Some pretty decent scores if I do say so myself!"
+
     label ask_covid:
         n "One last step before we meet the team members! How did your 2 week quarantine go?"
-        
+
         menu:
             "I’m fine, I just have a bit of trouble breathing.":
-                "You have COVID-19." # (Your health goes down/ you have COVID)
+                n "You have might have COVID-19. It will surely take a tool on your health" # (Your health goes down/ you have COVID) 
+                $ health -= 5
             "My head is clear and the air has never smelled better.":
-                "You're healthy."
+                n "You're healthy."
             "You know just coughing up blood, the usual.":
-                "You're dying." #(Death)
+                n "Sir, please leave the house right now" #(Death)
+                $ health = -1
+                jump end_scene
             "Eh, same as always.":
-                "You're fine." # (Fine)
-            "I’m not telling. Why do you wanna know?!":
-                "You're mean." # (RNG health?)
+                n "You're fine." # (Fine)
 
-
-        
-
-
-                    
-    jump teamIntroduction
-
-    label teamIntroduction:
-        show i smile2:
-            xpos 0
-        show b smile:
-            xpos .2
-        show j smile:
-            xpos .4
-        show t smile2:
-            xpos .6
-        show c wave:
-            xpos .8
-        n "Here's the team! Introduce your self by clicking on them!"
-
-    hide i
+    n "Thank you for the information! Now, it's time to meet the team!"
+    show i smile2:
+        xpos 0
+    show b smile:
+        xpos .2
+    show j smile:
+        xpos .4
+    show t smile2:
+        xpos .6
+    show c wave:
+        xpos .8
     hide b
     hide j
     hide t
     hide c
+    show n at left
+    show i wave at right
+    i "Hey, I'm Impact. Good to meet you."
+    hide i
+    show b wave at right
+    b "I'm Broxah. Welcome to the bootcamp."
+    hide b
+    show j wave at right
+    j "Hello. I'm Jensen. Congratulations on making it to the bootcamp!"
+    hide j
+    show t wave at right
+    t "I'm Tactical. Great to finally meet you."
+    hide t
+    show c wave at right
+    c "Hello, I'm CoreJJ. It's very nice to meet you!"
+    hide c
+    hide n
+    show n
     n "Meeting people can be exhausting, why don’t you rest up and I’ll get you tomorrow."
     menu:
         "Stay up a bit longer.":
-            "You choose to stay up longer." # health goes down
+            "You choose to stay up longer."
+            python:
+                health -= 5
+                sleep_late += 1
         "Go to bed now.":
-            "Blue is right. I'm pooped."
-
-
-
-return # This ends the game.
+            pov "Blue is right. I'm pooped."
+            
+    $ day_num += 1
+    jump day_start

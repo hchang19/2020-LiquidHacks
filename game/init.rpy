@@ -1,5 +1,7 @@
 # Linking images
 init:
+    image n:
+        "Blue.png"
     image b smile:
         "./Broxah/Broxah_smile.PNG"
         zoom 1.2
