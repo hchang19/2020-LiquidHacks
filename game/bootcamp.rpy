@@ -58,7 +58,7 @@ label boot_camp:
             pov "Mmmmmh, my spaghetti smells sooooo good!"
 
             show j smile
-            j "That looks so good! Mind if I try some? "
+            j "That looks so good! Mind if I try some?"
             pov "Of course! Lets eat together!"
             j "Wow! I love your cooking. I will be back for more!"
             hide j
@@ -107,7 +107,7 @@ label boot_camp:
             scene practice
             pov "Tactical can you show me the rope please?"
             show t smile
-            t "Of course! I will show you some neat tricks bot lane"
+            t "Of course! I will show you some neat tricks bot lane."
             t "Remember to ward dragon!"
             hide t
             "You learned a lot and hanging out with tactical incrases your relationship with him!"
