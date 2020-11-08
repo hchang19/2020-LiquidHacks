@@ -15,7 +15,7 @@ label end_scene:
                 onTeam = False
             if friendship[x] > maxFriendship:
                 voucher = x
-    if onTeam == True:
+    if onTeam == True and gameplay_level >= 50:
         jump main_ending
     elif fail == False:
         python:
@@ -75,7 +75,7 @@ label alternate_ending_impact:
         zoom 1.2
     show n at right
     i "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
-    if health >= 30:
+    if health >= 30 and gameplay_level >= 50:
         hide angry
         show sparkles at left:
             zoom 1.2
@@ -119,7 +119,7 @@ label alternate_ending_impact:
             zoom 1.2
         show n at right
         j "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
-        if health >= 30:
+        if health >= 30 and gameplay_level >= 50:
             hide angry
             show sparkles at left:
                 zoom 1.2
@@ -163,7 +163,7 @@ label alternate_ending_impact:
             zoom 1.2
         show n at right
         t "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
-        if health >= 30:
+        if health >= 30  and gameplay_level >= 50:
             hide angry
             show sparkles at left:
                 zoom 1.2
@@ -207,7 +207,7 @@ label alternate_ending_impact:
             zoom 1.2
         show n at right
         c "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
-        if health >= 30:
+        if health >= 30 and gameplay_level >= 50:
             hide angry
             show sparkles at left:
                 zoom 1.2
@@ -251,7 +251,7 @@ label alternate_ending_impact:
             zoom 1.2
         show n at right
         b "Wait a minute! [name] has so much potential! You have to reconsider this instant!"
-        if health >= 30:
+        if health >= 30 and gameplay_level >= 50:
             hide angry
             show sparkles at left:
                 zoom 1.2
@@ -295,5 +295,5 @@ label alternate_ending_impact:
         show flowers at center:
             zoom 1.2
         "The end."
-        "This was made by Henry Chang, Long Lin, Kate Land, and Nicole Guan. Art my Nicole Guan. Thank you for playing!"
+        "This was made by Henry Chang, Long Lin, Kate Land, and Nicole Guan. Art by Nicole Guan. Thank you for playing!"
         return
