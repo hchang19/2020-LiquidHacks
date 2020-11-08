@@ -89,7 +89,7 @@ label boot_camp:
                 pov "Yep, just practicing some of my garen mechanics"
             else:
                 pov "Okay, how exactly do I do the Shy combo?"
-
+                
             show i smile
             i "Look at you go! Practicing the fundamentals"
             i "I like those top lane picks! Let me give you some tips ..."

@@ -57,7 +57,6 @@ label start:
     show n
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
         Before you meet the team members, we will like to know you a little better. Please answer the following questions truthfully and honestly"
-    jump generate_stat
     # application screen
     label ask_name:
         python:
@@ -68,7 +67,7 @@ label start:
             n "Hmm. Sorry, I didn't quite catch that. Can you repeat yourself one more time?"
             jump ask_name
 
-    n "Nice to meet you [name]. Just a few more questions to go!"
+    n "Nice to meet you [name]. We are glad to have you here!"
 
     label ask_status:
         python:
@@ -185,10 +184,10 @@ label start:
     n "Meeting people can be exhausting, why don’t you rest up and I’ll get you tomorrow."
     menu:
         "Stay up a bit longer.":
-            "You choose to stay up longer."
-            python:
-                health -= 5
-                sleep_late += 1
+            pov "yes! People building mud huts from scratch! I love youtube!"
+            
+            $ health -= 5
+            $ sleep_late += 1
         "Go to bed now.":
             pov "Blue is right. I'm pooped."
             
