@@ -19,7 +19,7 @@ define b = Character("Broxah", who_color="32dcff")
 define j = Character("Jensen", who_color="7d32ff")
 define t = Character("Tactical", who_color="ff3255")
 define c = Character("CoreJJ", who_color="ff32b4")
-               
+
 
 # User stats
 define name = ""
@@ -55,7 +55,7 @@ label start:
         if not name:
             n "Hmm. Sorry, I didn't quite catch that. Can you repeat yourself one more time?"
             jump ask_name
-    
+
     n "Nice to meet you [name]. Just a few more questions to go!"
 
     label ask_status:
@@ -68,7 +68,7 @@ label start:
             jump ask_status
         else:
             n "so you are currently [status]. Sounds good!"
-    
+
     label ask_nationality:
         python:
             nationality = renpy.input("Which country do you hail from?")
@@ -95,7 +95,7 @@ label start:
             jump ask_birthday
         else:
             n "I see! Your birthday is on [birthday]! Hang in there we are almost done!"
-                
+
     label ask_game:
         python:
             game = "League of Legends"
@@ -122,7 +122,7 @@ label start:
             n "Some pretty decent scores if I do say so myself!"
     label ask_covid:
         n "One last step before we meet the team members! How did your 2 week quarantine go?"
-        
+
         menu:
             "I’m fine, I just have a bit of trouble breathing.":
                 "You have COVID-19." # (Your health goes down/ you have COVID)
@@ -135,34 +135,46 @@ label start:
             "I’m not telling. Why do you wanna know?!":
                 "You're mean." # (RNG health?)
 
-
-    jump teamIntroduction
-
-    label teamIntroduction:
-        show i smile2:
-            xpos 0
-        show b smile:
-            xpos .2
-        show j smile:
-            xpos .4
-        show t smile2:
-            xpos .6
-        show c wave:
-            xpos .8
-        n "Here's the team! Introduce your self by clicking on them!"
-
-    hide i
+    n "Thank you for the information! Now, it's time to meet the team!"
+    show i smile2:
+        xpos 0
+    show b smile:
+        xpos .2
+    show j smile:
+        xpos .4
+    show t smile2:
+        xpos .6
+    show c wave:
+        xpos .8
     hide b
     hide j
     hide t
     hide c
+    show n at left
+    show i wave at right
+    i "Hey, I'm Impact. Good to meet you."
+    hide i
+    show b wave at right
+    b "I'm Broxah. Welcome to the bootcamp."
+    hide b
+    show j wave at right
+    j "Hello. I'm Jensen. Congratulations on making it to the bootcamp!"
+    hide j
+    show t wave at right
+    t "I'm Tactical. Great to finally meet you."
+    hide t
+    show c wave at right
+    c "Hello, I'm CoreJJ. It's very nice to meet you!"
+    hide c
+    show n:
+        xpos .5
     n "Meeting people can be exhausting, why don’t you rest up and I’ll get you tomorrow."
     menu:
         "Stay up a bit longer.":
-            "You choose to stay up longer." # health goes down
+            "You choose to stay up longer."
+            health = health - 10
         "Go to bed now.":
             "Blue is right. I'm pooped."
-
 
 
 return # This ends the game.
