@@ -146,7 +146,7 @@ label boot_camp:
     
 
     label dayEnd:
-        n "Whew, what a long day of hard work! Go rest up and come back tomorrow stronger!"
+        n "Whew, what a long day of hard work! You are all out of juice! Go rest up and come back tomorrow stronger!"
         menu:
             "I think I'll stay up for a bit longer.":
                 pov "Hell yes! watching random youtube videos"
