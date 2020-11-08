@@ -3,15 +3,116 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define n = Character("Blue") # n for narrator
-define i = Character("Impact")
-define b = Character("Broxah")
-define j = Character("Jensen")
-define t = Character("Tactical")
-define c = Character("CoreJJ")
+define n = Character("Blue", who_color="#0f447a") # n for narrator
+define i = Character("Impact", who_color="#e5ff32")
+define b = Character("Broxah", who_color="32dcff")
+define j = Character("Jensen", who_color="7d32ff")
+define t = Character("Tactical", who_color="ff3255")
+define c = Character("CoreJJ", who_color="ff32b4")
 
 # Linking images
-image b smile = "Broxah_smile.PNG"
+init:
+    image b smile:
+        "./Broxah/Broxah_smile.PNG"
+        zoom 1.2
+        xanchor .12
+    image b smile2:
+        "./Broxah/Broxah_smile2.PNG"
+        xanchor .12
+        zoom 1.2
+    image b talk:
+        "./Broxah/Broxah_talk.PNG"
+        zoom 1.2
+        xanchor .12
+    image b upset:
+        "./Broxah/Broxah_upset.PNG"
+        zoom 1.2
+        xanchor .12
+    image b wave:
+        "./Broxah/Broxah_wave.PNG"
+        zoom 1.2
+        xanchor .12
+    image i smile:
+        "./Impact/Impact_smile.PNG"
+        zoom 1.2
+        xanchor .12
+    image i smile2:
+        "./Impact/Impact_smile2.PNG"
+        xanchor .12
+        zoom 1.2
+    image i talk:
+        "./Impact/Impact_talk.PNG"
+        xanchor .12
+        zoom 1.2
+    image i upset:
+        "./Impact/Impact_upset.PNG"
+        xanchor .12
+        zoom 1.2
+    image i wave:
+        "./Impact/Impact_wave.PNG"
+        zoom 1.2
+        xanchor .12
+    image j smile:
+        "./Jensen/Jensen_smile.PNG"
+        zoom 1.2
+        xanchor .12
+    image j smile2:
+        "./Jensen/Jensen_smile2.PNG"
+        zoom 1.2
+        xanchor .12
+    image j talk:
+        "./Jensen/Jensen_talk.PNG"
+        zoom 1.2
+        xanchor .12
+    image j upset:
+        "./Jensen/Jensen_upset.PNG"
+        zoom 1.2
+        xanchor .12
+    image j wave:
+        "./Jensen/Jensen_wave.PNG"
+        zoom 1.2
+        xanchor .12
+    image t smile:
+        "./Tactical/Tactical_smile.PNG"
+        zoom 1.2
+        xanchor .12
+    image t smile2:
+        "./Tactical/Tactical_smile2.PNG"
+        zoom 1.2
+        xanchor .12
+    image t talk:
+        "./Tactical/Tactical_talk.PNG"
+        zoom 1.2
+        xanchor .12
+    image t upset:
+        "./Tactical/Tactical_upset.PNG"
+        zoom 1.2
+    image t wave:
+        "./Tactical/Tactical_wave.PNG"
+        zoom 1.2
+        xanchor .12
+    image c smile:
+        "./CoreJJ/CoreJJ_smile.PNG"
+        zoom 1.2
+        xanchor .12
+    image c smile2:
+        "./CoreJJ/CoreJJ_smile2.PNG"
+        zoom 1.2
+        xanchor .12
+    image c talk:
+        "./CoreJJ/CoreJJ_talk.PNG"
+        zoom 1.2
+        xanchor .12
+    image c upset:
+        "./CoreJJ/CoreJJ_upset.PNG"
+        zoom 1.2
+        xanchor .12
+    image c wave:
+        "./CoreJJ/CoreJJ_wave.PNG"
+        zoom 1.2
+        xanchor .12
+
+
 
 # The game starts here.
 
@@ -27,9 +128,7 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show n happy
-    show b smile at left:
-        zoom 1.2
+    show n
 
 
     # These display lines of dialogue.
@@ -52,14 +151,29 @@ label start:
         "I’m not telling. Why do you wanna know?!":
             "You're mean." # (RNG health?)
 
+    show i smile2:
+        xpos 0
+    show b smile2:
+        xpos .2
+    show j upset:
+        xpos .4
+    show t talk:
+        xpos .6
+    show c wave:
+        xpos .8
     n "Here's the team! Introduce your self by clicking on them!"
-
+    hide i
+    hide b
+    hide j
+    hide t
+    hide c
     n "Meeting people can be exhausting, why don’t you rest up and I’ll get you tomorrow."
-menu:
-    "Stay up a bit longer.":
-        "You choose to stay up longer." # health goes down
-    "Go to bed now.":
-        "Blue is right. I'm pooped."
-    # This ends the game.
+    menu:
+        "Stay up a bit longer.":
+            "You choose to stay up longer." # health goes down
+        "Go to bed now.":
+            "Blue is right. I'm pooped."
 
-return
+
+
+return # This ends the game.
