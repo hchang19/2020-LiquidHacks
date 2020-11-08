@@ -55,7 +55,7 @@ label start:
     scene welcome
     show n
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
-        Before you meet the team members, we will like to know you a little better. Please answer the following questions truthfully and honestly"
+        Before you meet the team members, we will like to know you a little better. Please answer the following questions truthfully and honestly."
     # application screen
     label ask_name:
         python:
@@ -74,10 +74,10 @@ label start:
             status = status.strip()
 
         if not status or status not in ['unemployed', 'active' , 'retired']:
-            n "Sorry, that is not a valid answer for status. Please read carefully and fill it out again"
+            n "Sorry, that is not a valid answer for status. Please read carefully and fill it out again."
             jump ask_status
         else:
-            n "so you are currently [status]. Sounds good!"
+            n "So you are currently [status]. Sounds good!"
 
     label ask_nationality:
         python:
@@ -88,7 +88,7 @@ label start:
             n "You can't leave this spot blank! Please just fill it out."
             jump ask_nationality
         else:
-            n "Oh, so you are from [nationality]"
+            n "Oh, so you are from [nationality]. That's pretty cool!"
 
     label ask_birthday:
         python:
@@ -101,7 +101,7 @@ label start:
             except ValueError:
                 birthday = None
         if not birthday:
-            n "Your formatting is a little weird... Try again"
+            n "Your formatting is a little weird... Try again."
             jump ask_birthday
         else:
             n "I see! Your birthday is on [birthday]! Hang in there we are almost done!"
@@ -110,7 +110,7 @@ label start:
         python:
             game = "League of Legends"
         n "Hmm. The file says you are here applying for the {b}[game]{/b} team! Cool beans! Lets go and do a quick
-        checkup before we meet the team members"
+        checkup before we meet the team members."
 
     label generate_stat:
         n "Beep Boop Beep. Checking your skill, health, and stamina..."
@@ -145,7 +145,7 @@ label start:
                 $ health = -1
                 jump end_scene
             "Eh, same as always.":
-                n "Glad to hear you're alright." # (Fine)
+                n "Glad to hear you're doing alright." # (Fine)
 
     n "Thank you for the information! Now, it's time to meet the team!"
     show i smile2:

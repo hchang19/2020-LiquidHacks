@@ -11,7 +11,7 @@ label end_scene:
         for x in friendship:
             if friendship[x] > 0:
                 fail = False
-            if friendship[x] < 5:
+            if friendship[x] < 3:
                 onTeam = False
             if friendship[x] > maxFriendship:
                 voucher = x
