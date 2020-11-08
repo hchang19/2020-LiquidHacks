@@ -82,7 +82,7 @@ label alternate_ending_impact:
         show i upset at left
         show tear at left:
             zoom 1.2
-        i "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
+        n "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
         hide tear
         hide n
         show i at center
@@ -124,7 +124,7 @@ label alternate_ending_impact:
             show j upset at left
             show tear at left:
                 zoom 1.2
-            j "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
+            n "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
             hide tear
             hide n
             show j at center
@@ -166,7 +166,7 @@ label alternate_ending_impact:
             show t upset at left
             show tear at left:
                 zoom 1.2
-            t "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
+            n "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
             hide tear
             hide n
             show t at center
@@ -208,7 +208,7 @@ label alternate_ending_impact:
             show c upset at left
             show tear at left:
                 zoom 1.2
-            c "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
+            n "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
             hide tear
             hide n
             show c at center
@@ -250,7 +250,7 @@ label alternate_ending_impact:
             show b at left
             show tear at left:
                 zoom 1.2
-            b "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
+            n "No, I’m sorry, but there it would take too long to refine [name]'s skill. Try again next time and I’m sure you can make it!"
             hide tear
             hide n
             show b at center
@@ -277,5 +277,6 @@ label alternate_ending_impact:
         show n at center
         show flowers at center:
             zoom 1.2
+        "The end."
         "This was made by Henry Chang, Long Lin, Kate Land, and Nicole Guan. Art my Nicole Guan. Thank you for playing!"
         return
