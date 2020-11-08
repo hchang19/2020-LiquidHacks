@@ -172,7 +172,8 @@ label start:
     menu:
         "Stay up a bit longer.":
             "You choose to stay up longer."
-            # health = health - 10
+            python:
+                health = health - 10
         "Go to bed now.":
             "Blue is right. I'm pooped."
 
