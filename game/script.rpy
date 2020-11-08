@@ -20,6 +20,8 @@ define j = Character("Jensen", who_color="7d32ff")
 define t = Character("Tactical", who_color="ff3255")
 define c = Character("CoreJJ", who_color="ff32b4")
 
+# what day it is
+define day_num = 0
 
 # User stats
 define name = ""
@@ -27,7 +29,15 @@ define status = ""
 define nationality = ""
 define birthday = ""
 define game = ""
-define friendship = [0, 0, 0, 0, 0]
+python:
+    friendship =
+    {
+        "impact": 0,
+        "broxah": 0,
+        "jensen": 0,
+        "tactical": 0,
+        "corejj": 0
+    }
 
 #Randomly generated userstats
 define gameplay_level = 0
@@ -45,7 +55,7 @@ label start:
     show n
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
         Before you meet the team members, we will like to know you a little better. Please answer the following questions truthfully and honestly"
-
+    jump boot_camp
     # application screen
     label ask_name:
         python:
@@ -176,8 +186,4 @@ label start:
                 health = health - 10
         "Go to bed now.":
             "Blue is right. I'm pooped."
-
-jump boot_camp
-
-
-return # This ends the game.
+    jump bootcamp
