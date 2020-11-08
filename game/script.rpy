@@ -29,9 +29,7 @@ define status = ""
 define nationality = ""
 define birthday = ""
 define game = ""
-python:
-    friendship =
-    {
+define friendship = {
         "impact": 0,
         "broxah": 0,
         "jensen": 0,
