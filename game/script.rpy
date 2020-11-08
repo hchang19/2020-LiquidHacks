@@ -3,12 +3,33 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+#defining scenes
+image welcome = "./scenes/Welcome.PNG"
+image cook = "./scenes/Cook.PNG"
+image eat_out = "./scenes/Eat Out.PNG"
+image gym = "./scenes/Gym.PNG"
+image practice = "./scenes/Practice.PNG"
+image run = "./scenes/Run.PNG"
+image map = "Map.PNG"
+
+# defining characters
 define n = Character("Blue", who_color="#0f447a") # n for narrator
 define i = Character("Impact", who_color="#e5ff32")
 define b = Character("Broxah", who_color="32dcff")
 define j = Character("Jensen", who_color="7d32ff")
 define t = Character("Tactical", who_color="ff3255")
 define c = Character("CoreJJ", who_color="ff32b4")
+
+# User stats
+define name = ""
+define status = ""
+define nationality = ""
+define birthday = ""
+define game = ""
+define friendship = [0, 0, 0, 0, 0]
+define gameplay_level = 0
+define health = 0
+define stamina = 0
 
 # Linking images
 init:
@@ -118,20 +139,8 @@ init:
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
+    scene welcome
     show n
-
-
-    # These display lines of dialogue.
 
     n "Congratulations! You're accepted to the Team Liquid Bootcamp!
         Please fill out this form to finalize your information."
@@ -150,18 +159,21 @@ label start:
             "You're fine." # (Fine)
         "I’m not telling. Why do you wanna know?!":
             "You're mean." # (RNG health?)
+    jump teamIntroduction
 
-    show i smile2:
-        xpos 0
-    show b smile2:
-        xpos .2
-    show j upset:
-        xpos .4
-    show t talk:
-        xpos .6
-    show c wave:
-        xpos .8
-    n "Here's the team! Introduce your self by clicking on them!"
+    label teamIntroduction:
+        show i smile2:
+            xpos 0
+        show b smile:
+            xpos .2
+        show j smile:
+            xpos .4
+        show t smile2:
+            xpos .6
+        show c wave:
+            xpos .8
+        n "Here's the team! Introduce your self by clicking on them!"
+
     hide i
     hide b
     hide j
